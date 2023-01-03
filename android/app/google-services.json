@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "43601487862",
+    "project_id": "fcpush-f5e48",
+    "storage_bucket": "fcpush-f5e48.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:43601487862:android:0c8f1e3820ff2f57d849d7",
+        "android_client_info": {
+          "package_name": "com.fcpush"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "43601487862-g3hepflo8mfcsi2p50o0ucu701dkc1tt.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAt3zNTEQAd1i-Uwe3jUeRZxLsK9Gf9IY4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "43601487862-g3hepflo8mfcsi2p50o0ucu701dkc1tt.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

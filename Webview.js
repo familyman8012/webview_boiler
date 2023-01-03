@@ -13,10 +13,19 @@ import {
   View,
 } from 'react-native';
 import {useFocusEffect} from '@react-navigation/native';
+import {
+  requestUserPermission,
+  NotificationListner,
+} from './src/utils/pushnotification_helper';
 
 function HomeScreen() {
   const webview = useRef(null);
   const [canGoBack, SetCanGoBack] = useState(false);
+
+  useEffect(() => {
+    requestUserPermission();
+    NotificationListner();
+  }, []);
 
   useFocusEffect(
     React.useCallback(() => {

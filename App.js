@@ -10,6 +10,10 @@ import React, {useEffect} from 'react';
 import Webview from './Webview';
 import {NavigationContainer, DefaultTheme} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import {
+  NotificationListner,
+  requestUserPermission,
+} from './src/utils/pushnotification_helper';
 const Stack = createStackNavigator();
 const Theme = {
   ...DefaultTheme,
@@ -20,6 +24,11 @@ const Theme = {
 };
 
 const App = () => {
+  useEffect(() => {
+    requestUserPermission();
+    NotificationListner();
+  }, []);
+
   return (
     <>
       <NavigationContainer theme={Theme}>
