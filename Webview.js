@@ -1,14 +1,17 @@
-import React, {useState, useRef, useCallback, useEffect} from 'react';
+import React, {useState, useRef, useEffect} from 'react';
 import {WebView} from 'react-native-webview';
-import {StyleSheet, BackHandler, Alert, PermissionsAndroid} from 'react-native';
+import {StyleSheet, BackHandler} from 'react-native';
 import {useFocusEffect} from '@react-navigation/native';
 import RemotePushController from './src/services/RemotePushController';
-
-// const adUnitId = __DEV__ ? TestIds.REWARDED : 'ca-app-pub-5419852983818824/4053895469';
 
 function HomeScreen() {
   const webview = useRef(null);
   const [canGoBack, SetCanGoBack] = useState(false);
+
+  useEffect(() => {
+    requestUserPermission();
+    NotificationListner();
+  }, []);
 
   useFocusEffect(
     React.useCallback(() => {
@@ -46,6 +49,7 @@ function HomeScreen() {
           SetCanGoBack(navState.canGoBack);
         }}
       />
+      <RemotePushController />
     </>
   );
 }
