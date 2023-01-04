@@ -11,7 +11,7 @@ import {Alert} from 'react-native';
 // Register background handler
 messaging().setBackgroundMessageHandler(async remoteMessage => {
   console.log('Message handled in the background!', remoteMessage);
-  Alert.alert('A new FCM message arrived!', JSON.stringify(remoteMessage));
+  Alert.alert(remoteMessage.title, remoteMessage.message);
 });
 
 AppRegistry.registerComponent(appName, () => App);

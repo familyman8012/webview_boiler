@@ -37,6 +37,10 @@ export const NotificationListner = () => {
       'Notification caused app to open from background state:',
       remoteMessage.notification,
     );
+    Alert.alert(
+      remoteMessage.notification.title,
+      remoteMessage.notification.body,
+    );
   });
 
   // Check whether an initial notification is available
@@ -48,11 +52,18 @@ export const NotificationListner = () => {
           'Notification caused app to open from quit state:',
           remoteMessage.notification,
         );
+        Alert.alert(
+          remoteMessage.notification.title,
+          remoteMessage.notification.body,
+        );
       }
     });
 
   messaging().onMessage(async remoteMessage => {
     console.log('notification on foreground state...', remoteMessage);
-    Alert.alert('A new FCM message arrived!', JSON.stringify(remoteMessage));
+    Alert.alert(
+      remoteMessage.notification.title,
+      remoteMessage.notification.body,
+    );
   });
 };
